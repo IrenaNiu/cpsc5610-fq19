@@ -41,7 +41,7 @@ def aStarSearch(problem, evaluator, verbose=None, limit=None):
         nextNode = fringe.pop()   # A search state (state, actions)
         numVisited += 1
         if (limit and numVisited > limit):
-            return None
+            return(None, (time.process_time() - startTime, numVisited, numSkipped, max_fringe_size))
         if (verbose and numVisited % verbose == 0):
             print("Visited " + str(numVisited) + " world is " + str(nextNode._worldState))
             print("Skipped " + str(numSkipped) + " Fringe is size " + str(len(fringe.heap)))
@@ -63,7 +63,7 @@ def aStarSearch(problem, evaluator, verbose=None, limit=None):
     raise "Impossible search execution path."
 
 ## Instances of SearchState go on the search fringe -- contains both a state and 
-## list of actions so far
+## list of actions so far.  SearchState is internal to the search algorithm
 
 class SearchState:
     def __str__(self):
@@ -83,11 +83,18 @@ class SearchState:
 ##  Interfaces that must be implemented by the client
 
 #  Method successors() returns a tuple:  (worldState, action)
+# 
+# * Implementation must be aware that it is going to be stored and compared
+#  against other states:  override hash and equals appropriately
+# * Implementation must not share state across instances!
+
 class WorldState:
     def successors():
         raise "Not implemented"
-
-# Problem must supply the initial state and a goal state checker       
+		
+############
+# Problem must supply the initial state and a goal state checker   
+    
 class Problem:
     # Method initial returns a world state
     def initial(self):
@@ -97,8 +104,8 @@ class Problem:
     def isGoal(self, state):
         raise "Not implemented"
 
-# Client provides g(s) and h*(s)        
-# Evaluator provides the evaluator f(s) = g(s) + h*(s)
+# Client provides g(s) and h*(s) in the form of actionsCoster and goalEstimator      
+# Evaluator superclass provides the evaluator f(s) = g(s) + h*(s)
 class Evaluator:
     def __init__(self, actionsCoster, goalEstimator):
         self._estimator = goalEstimator
