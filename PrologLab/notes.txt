@@ -1,0 +1,44 @@
+Prolog Lab Topic Sequence
+
+1.  Prolog up and running.   Concept of Database with no assertions.
+2.  Working directory
+
+      working_directory(X).
+      change_directory('C:\\Users\\hanks\\Documents\\GitHub\\cpsc5610-fq19\\PrologLab').
+  What does that tell us about how Prolog works?
+
+3.  Assert by consulting a file 01.pl -- Two assertions, one a constant, one a variable.
+       Consult the file
+       Interesting one is bar(Z) 
+
+4.  Socrates -- multiple answers to man(X) and of mortal(X).  Show how multiple answers work
+       Also edit the file and consult it again -- add human + alive => person 
+
+5.  West axioms
+Notice the constants.  Use it for criminal(X) but also hostile(Z), missile(A) etc.
+Show trace.
+
+6.  04 Backtracking example.  Start with wrong notation!
+
+7.  05 numbers
+Do factorial:
+factorial(X, 1) :- X =< 1.
+factorial(X, Z) :- Y is X - 1, factorial(Y, Q), Z is Q * X.
+
+Note multiple answers -- introduce the cut.
+
+8.  Lists
+First element of a list.
+Second element of a list
+Last element of a list
+
+List member and not member
+nodups([]).
+nodups([F|R]) :- notmember(F, R), nodups(R).
+
+notmember(_, []).
+notmember(E, [E|_]) :- fail, !.
+notmember(E, [F|R]) :- F \= E, notmember(E, R).
+
+notmember2(E, L) :- \+ member(E, L).
+
