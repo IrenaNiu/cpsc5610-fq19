@@ -1,0 +1,42 @@
+LAB PROBLEMS
+
+======================================
+
+DEDUCTION:  
+
+Assume you are given a set of facts of the form parent(x,y) -- x is the parent of y.
+
+Write definitions for 
+  * sibling(X, Y) true is X and Y are different, but have the same parent
+  * cousin(X, Y), true if X and Y are different, and X's father and Y's father are siblings
+  * grandchild(X, Y) true if the parent of X's parent is Y
+  * descendent(X, Y) true if there is a chain of parent relationships leading from X to Y
+
+You can use the following facts as given:
+   father(a,b).              
+   father(a,c).
+   father(b,d).
+   father(b,e).
+   father(c,f).
+
+========================================
+NUMBERS:
+  The Fibonacci sequence is defined as fib(x) = fib(x-2) + fib(x-1) where x > 0, and fib(0) = 0, and fib(1) = fib(2) = 1
+  Write the predicate fib(N, M) which should fail for N < 0
+
+========================================  
+LISTS:
+
+Consider a representation of mathematical sets as Prolog lists.  A set is a list with no duplicates.
+
+Write the following predicates
+   xmember(Element, Set)
+   xintersection(Set1, Set2, SetI)
+   xunion(Set1, Set2, SetU)
+ 
+ (We're putting x at the beginning of the name because Prolog has 
+ built-in predicates with those names.  Do not use the built-ins in your solution.)
+ 
+   
+   
+   
