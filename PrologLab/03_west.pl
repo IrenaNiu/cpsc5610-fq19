@@ -1,4 +1,4 @@
-criminal(X) :- american(X), weapon(Y), sells(X,Y,Z), hostile(Z), sells(X, Y, Z), hostile(Z).
+criminal(X) :- american(X), weapon(Y), sells(X,Y,Z), hostile(Z).
 sells(west, X, nono) :- missile(X), owns(nono,X).
 weapon(X) :- missile(X).
 hostile(Z) :- enemy(Z, america).
