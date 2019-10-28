@@ -1,10 +1,10 @@
-happy(x) :- healthy(x), wealthy(x).
-happy(x) :- wise(x).
-happy(Fred).
+happy(X) :- healthy(X), wealthy(X).
+happy(X) :- wise(X).
+happy(fred).
 
-healthy(Heather).
-healthy(Harry).
+healthy(heather).
+healthy(harry).
 
-wise(Fred).
+wise(fred).
 
-wealthy(Harry).
+wealthy(harry).

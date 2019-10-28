@@ -32,7 +32,7 @@ First element of a list.
 Second element of a list
 Last element of a list
 
-List member and not member
+List no duplicates, member and not member
 nodups([]).
 nodups([F|R]) :- notmember(F, R), nodups(R).
 
@@ -41,4 +41,15 @@ notmember(E, [E|_]) :- fail, !.
 notmember(E, [F|R]) :- F \= E, notmember(E, R).
 
 notmember2(E, L) :- \+ member(E, L).
+
+9.  Suppose we have this predicate dead (or alive for that matter) and we want to store its state in the database.
+Furthermore we have "actions" kill and resurrect.
+
+:- dynamic(dead/0).
+
+kill :- \+dead, fail!.
+kill :- asserta(dead).
+
+resurrect :- dead, retract(dead), !.
+resurrect :- fail,!.
 
