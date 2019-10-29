@@ -3,5 +3,5 @@
 kill :- dead, !, fail.
 kill :- asserta(dead).
 
-resurrect :- dead, retract(dead), !.
-resurrect :- !, fail.
+resurrect :- dead, retract(dead).
+
