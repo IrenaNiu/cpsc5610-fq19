@@ -3,7 +3,7 @@ Prolog Lab Topic Sequence
 1.  Prolog up and running.   Concept of Database with no assertions.
 2.  Working directory
 
-      working_directory(X).
+      working_directory(-X).
       change_directory('C:\\Users\\hanks\\Documents\\GitHub\\cpsc5610-fq19\\PrologLab').
   What does that tell us about how Prolog works?
 
