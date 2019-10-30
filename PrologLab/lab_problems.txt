@@ -17,7 +17,10 @@ You can use the following facts as given:
    father(a,c).
    father(b,d).
    father(b,e).
-   father(c,f).
+   father(c,f).	
+
+CHALLENGE PROBLEM.  As it is, you can't say sibling(X,Y) and get a list of all pairs of people who
+are siblings.  Fix that.
 
 ========================================
 NUMBERS:
