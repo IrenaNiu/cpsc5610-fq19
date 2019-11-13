@@ -46,7 +46,6 @@ class Board():
     
     def resolveStrimko(self, inits, streams):
         solutions = solveProblem(inits, streams)
-        print "Got ", solutions
         if len(solutions) > 0:
             solution = solutions[0]
             for a in solution:
