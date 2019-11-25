@@ -1,0 +1,34 @@
+This data set has 400 observations on the following 11 variables.  Each observation records information about a single store and the region in which it is located.  The task is to predict the number of car seats (Sales) given information about the store and its region.
+
+Sales:
+Unit sales (in thousands) at this store
+
+CompPrice:
+Price in dollars charged by competitor in the region
+
+Income:
+Mean income level in the region(in thousands of dollars)
+
+Advertising:
+Local advertising budget for company in the region (in thousands of dollars)
+
+Population:
+Population size (in thousands)of the region 
+
+Price
+Price the company charges for car seats at this store
+
+ShelveLoc
+The shelving location of the car seats at the store.  Possible values are Bottom, Middle, and Top
+
+Age
+Average age of the population in the region
+
+Education
+Average education level in the region, measured in number of years
+
+Urban
+A factor with levels No and Yes to indicate whether the store is in an urban or rural location
+
+US
+A factor with levels No and Yes to indicate whether the store is in the US or not
